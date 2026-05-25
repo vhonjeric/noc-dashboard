@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NOC Dashboard Simulation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="topbar">
+        <div class="logo">VJR. <span>NOC SIMULATION</span></div>
+        <div class="clock" id="clock">00:00:00 UTC</div>
+    </header>
+
+    <main class="dashboard-grid">
+        <div class="stat-card">
+            <h3>Global Uptime</h3>
+            <div class="stat-value success">99.99%</div>
+        </div>
+        <div class="stat-card">
+            <h3>Active Incidents</h3>
+            <div class="stat-value warning" id="active-tickets-count">0</div>
+        </div>
+        <div class="stat-card">
+            <h3>Current Bandwidth</h3>
+            <div class="stat-value info" id="bandwidth-val">4.2 Gbps</div>
+        </div>
+
+        <div class="panel chart-panel">
+            <div class="panel-header">Live Network Traffic (Ingress / Egress)</div>
+            <div class="chart-container">
+                <canvas id="networkChart"></canvas>
+            </div>
+        </div>
+
+        <div class="panel ticket-panel">
+            <div class="panel-header">Live Alert Ticketing Feed (Jira/FS3 Sim)</div>
+            <div class="ticket-feed" id="ticket-feed">
+                </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
